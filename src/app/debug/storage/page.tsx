@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { products } from '@/lib/products';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 interface StorageData {
   user: any;
@@ -34,35 +36,32 @@ export default function LocalStorageDebugPage() {
     return null; // Render nothing on the server
   }
 
+  const DataCard = ({ title, data }: { title: string, data: any }) => (
+     <Card>
+        <CardHeader>
+          <CardTitle>{title}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <pre className="p-4 bg-muted rounded-md overflow-x-auto text-sm h-96">
+            {JSON.stringify(data, null, 2)}
+          </pre>
+        </CardContent>
+      </Card>
+  )
+
   return (
     <div className="container mx-auto py-12">
       <h1 className="text-4xl font-bold text-center mb-8 font-headline">
-        Local Storage Data
+        Developer Data View
       </h1>
       <p className="text-center text-muted-foreground mb-8">
-        This page shows the data currently stored in your browser for this application.
+        This page shows all data sources for the application.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <Card>
-          <CardHeader>
-            <CardTitle>User Data</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <pre className="p-4 bg-muted rounded-md overflow-x-auto text-sm">
-              {data ? JSON.stringify(data.user, null, 2) : 'No user data found.'}
-            </pre>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Cart Data</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <pre className="p-4 bg-muted rounded-md overflow-x-auto text-sm">
-              {data ? JSON.stringify(data.cart, null, 2) : 'No cart data found.'}
-            </pre>
-          </CardContent>
-        </Card>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <DataCard title="User Data (localStorage)" data={data?.user || 'No user data found.'} />
+        <DataCard title="Cart Data (localStorage)" data={data?.cart || 'No cart data found.'} />
+        <DataCard title="Product Catalog (Static)" data={products} />
+        <DataCard title="Image Placeholders (Static)" data={PlaceHolderImages} />
       </div>
     </div>
   );

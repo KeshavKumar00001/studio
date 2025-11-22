@@ -1,3 +1,4 @@
+
 export type ProductCategory = 'Ayurvedic' | 'Homeopathic' | 'Supplements' | 'Allopathic';
 
 export const productCategories: ProductCategory[] = ['Ayurvedic', 'Homeopathic', 'Supplements', 'Allopathic'];
@@ -14,4 +15,7 @@ export type Product = {
 };
 
 export type CartItem = {
-  id
+  id: string;
+  product: Product;
+  quantity: number;
+};

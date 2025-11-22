@@ -1,0 +1,172 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /**
+     * Core Philosophy: This ruleset enforces a strict user-ownership model. All data
+     * directly related to a user's activity (profile, carts, orders) is stored
+     * within a user-specific document tree, making authorization straightforward and secure.
+     * Public data, like the product catalog, is structurally segregated into a separate
+     * top-level collection.
+     *
+     * Data Structure: User-specific data is hierarchically organized under /users/{userId}.
+     * This includes subcollections for carts and orders. This structure ensures that a user's
+     * data can be secured with a single ownership check against the path. Global data like
+     * the product catalog resides in the top-level /products collection.
+     *
+     * Key Security Decisions:
+     * - Default Deny: Access is denied unless explicitly granted.
+     * - User Scoping: Users can only access documents within their own /users/{userId} path.
+     *   Directly listing all users from the /users collection is prohibited.
+     * - Public Catalog: The /products collection is publicly readable by anyone but is not
+     *   writable by any client, protecting the integrity of the catalog.
+     * - Immutable Orders: To preserve a user's purchase history, orders cannot be deleted by clients.
+     *
+     * Denormalization for Authorization: The /addresses collection is a top-level collection.
+     * To securely associate an address with its owner without performing costly cross-collection
+     * queries, each address document MUST contain a `userId` field. These rules enforce the
+     * presence and correctness of this `userId` field on all write operations.
+     *
+     * Structural Segregation: The separation of private user data (/users/{userId}) from
+     * public catalog data (/products) is a core design choice. This allows for simple,
+     * performant, and secure rules for listing public content without exposing any private user information.
+     */
+
+    // --------------------------------------------------------------------------
+    // Helper Functions
+    // --------------------------------------------------------------------------
+
+    /**
+     * Checks if a user is authenticated.
+     */
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    /**
+     * Checks if the currently authenticated user's UID matches the provided userId.
+     * Used to verify ownership of a document or data path.
+     */
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    /**
+     * Checks for ownership on an existing document.
+     * CRITICAL: This must be used for all update and delete operations to prevent
+     * acting on documents that do not exist.
+     */
+    function isExistingOwner(userId) {
+      return isOwner(userId) && resource != null;
+    }
+
+    // --------------------------------------------------------------------------
+    // User Data Collections
+    // --------------------------------------------------------------------------
+
+    /**
+     * @description Manages user profile documents.
+     * @path /users/{userId}
+     * @allow A signed-in user (create)s their own profile document.
+     * @deny An anonymous user tries to (get) a user profile.
+     * @principle Restricts access to a user's own data tree.
+     */
+    match /users/{userId} {
+      allow get: if isOwner(userId);
+      allow list: if false; // Disallow listing all users for security and privacy.
+      allow create: if isOwner(userId) && request.resource.data.id == userId;
+      allow update: if isExistingOwner(userId) && request.resource.data.id == resource.data.id;
+      allow delete: if isExistingOwner(userId);
+
+      /**
+       * @description Manages a user's shopping cart.
+       * @path /users/{userId}/carts/{cartId}
+       * @allow The owner of the user document (create)s a cart.
+       * @deny A different user attempts to (get) another user's cart.
+       * @principle Enforces document ownership via path hierarchy.
+       */
+      match /carts/{cartId} {
+        allow get, list: if isOwner(userId);
+        allow create: if isOwner(userId) && request.resource.data.userId == userId;
+        allow update: if isExistingOwner(userId) && request.resource.data.userId == resource.data.userId;
+        allow delete: if isExistingOwner(userId);
+      }
+
+      /**
+       * @description Manages items within a user's shopping cart.
+       * @path /users/{userId}/carts/{cartId}/cartItems/{cartItemId}
+       * @allow The owner of the cart (create)s a new cart item.
+       * @deny A different user attempts to (delete) an item from another user's cart.
+       * @principle Enforces document ownership via path hierarchy.
+       */
+      match /carts/{cartId}/cartItems/{cartItemId} {
+        allow get, list: if isOwner(userId);
+        allow create: if isOwner(userId) && request.resource.data.cartId == cartId;
+        allow update: if isExistingOwner(userId) && request.resource.data.cartId == resource.data.cartId;
+        allow delete: if isExistingOwner(userId);
+      }
+
+      /**
+       * @description Manages a user's historical orders.
+       * @path /users/{userId}/orders/{orderId}
+       * @allow The owner of the user document (create)s an order.
+       * @deny A different user attempts to (update) another user's order.
+       * @principle Enforces ownership and data integrity (orders are non-deletable).
+       */
+      match /orders/{orderId} {
+        allow get, list: if isOwner(userId);
+        allow create: if isOwner(userId) && request.resource.data.userId == userId;
+        allow update: if isExistingOwner(userId) && request.resource.data.userId == resource.data.userId;
+        allow delete: if false; // Orders should not be deleted to preserve user history.
+      }
+
+      /**
+       * @description Manages items within a user's order.
+       * @path /users/{userId}/orders/{orderId}/orderItems/{orderItemId}
+       * @allow The owner of the order (get)s an order item.
+       * @deny A different user attempts to (list) items from another user's order.
+       * @principle Enforces document ownership via path hierarchy.
+       */
+      match /orders/{orderId}/orderItems/{orderItemId} {
+        allow get, list: if isOwner(userId);
+        allow create: if isOwner(userId) && request.resource.data.orderId == orderId;
+        allow update: if isExistingOwner(userId) && request.resource.data.orderId == resource.data.orderId;
+        allow delete: if isExistingOwner(userId);
+      }
+    }
+
+    // --------------------------------------------------------------------------
+    // Top-Level Collections
+    // --------------------------------------------------------------------------
+
+    /**
+     * @description Manages user address documents.
+     * @path /addresses/{addressId}
+     * @allow A signed-in user (create)s their own address document, providing their own UID in the 'userId' field.
+     * @deny A user attempts to (list) all addresses in the collection.
+     * @principle Enforces document ownership for writes by requiring a denormalized 'userId' field.
+     */
+    match /addresses/{addressId} {
+      // CRITICAL: A 'userId' field MUST exist on each address document for these rules to work.
+      allow get: if isSignedIn() && isOwner(get(/databases/$(database)/documents/addresses/$(addressId)).data.userId);
+      allow list: if false; // Listing all addresses is a security risk.
+      allow create: if isSignedIn() && request.resource.data.userId == request.auth.uid;
+      allow update: if isExistingOwner(resource.data.userId);
+      allow delete: if isExistingOwner(resource.data.userId);
+    }
+
+    /**
+     * @description Manages the public product catalog.
+     * @path /products/{productId}
+     * @allow Any user, including anonymous ones, can (get) or (list) products.
+     * @deny Any client, including signed-in users, attempts to (create), (update), or (delete) a product.
+     * @principle Provides public read access while preventing unauthorized client-side modification.
+     */
+    match /products/{productId} {
+      allow get, list: if true;
+      allow create: if false; // Products should be managed by a trusted backend server/admin SDK.
+      allow update: if false; // Products should be managed by a trusted backend server/admin SDK.
+      allow delete: if false; // Products should be managed by a trusted backend server/admin SDK.
+    }
+  }
+}

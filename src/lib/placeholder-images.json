@@ -1,3 +1,100 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero",
+      "description": "A serene background of herbs and medicinal plants.",
+      "imageUrl": "https://images.unsplash.com/photo-1730584934611-03b7eb49e3a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxoZXJicyUyMG1lZGljaW5lfGVufDB8fHx8MTc2MzgyMDg1N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "herbs medicine"
+    },
+    {
+      "id": "prod_1",
+      "description": "Bottle of Ashwagandha tablets",
+      "imageUrl": "https://images.unsplash.com/photo-1633171029787-3a1022cfc922?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtZWRpY2luZSUyMGJvdHRsZXxlbnwwfHx8fDE3NjM3MTgxNjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "medicine bottle"
+    },
+    {
+      "id": "prod_2",
+      "description": "Bottle of Triphala powder",
+      "imageUrl": "https://images.unsplash.com/photo-1671753801978-69571ac973b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwb3dkZXIlMjBoZXJic3xlbnwwfHx8fDE3NjM4MjA4NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "powder herbs"
+    },
+    {
+      "id": "prod_3",
+      "description": "Bottle of Brahmi capsules",
+      "imageUrl": "https://images.unsplash.com/photo-1562243061-204550d8a2c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjYXBzdWxlcyUyMGJvdHRsZXxlbnwwfHx8fDE3NjM4MjA4NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "capsules bottle"
+    },
+    {
+      "id": "prod_4",
+      "description": "Bottle of Arnica Montana pellets",
+      "imageUrl": "https://images.unsplash.com/photo-1608571899793-a1c0c27a7555?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxob21lb3BhdGh5JTIwYm90dGxlfGVufDB8fHx8MTc2MzgyMDg1N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "homeopathy bottle"
+    },
+    {
+      "id": "prod_5",
+      "description": "Bottle of Nux Vomica solution",
+      "imageUrl": "https://images.unsplash.com/photo-1663782463991-17b45e3bca07?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxsaXF1aWQlMjBtZWRpY2luZXxlbnwwfHx8fDE3NjM4MjA4NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "liquid medicine"
+    },
+    {
+      "id": "prod_6",
+      "description": "Vial of Belladonna",
+      "imageUrl": "https://images.unsplash.com/photo-1763142842692-b3e649aae313?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtZWRpY2luZSUyMHZpYWx8ZW58MHx8fHwxNzYzODIwODU3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "medicine vial"
+    },
+    {
+      "id": "prod_7",
+      "description": "Bottle of Vitamin D3 softgels",
+      "imageUrl": "https://images.unsplash.com/photo-1687200267508-51bcf2146306?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx2aXRhbWluJTIwYm90dGxlfGVufDB8fHx8MTc2Mzc2NjAwM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "vitamin bottle"
+    },
+    {
+      "id": "prod_8",
+      "description": "Jar of Omega-3 Fish Oil capsules",
+      "imageUrl": "https://images.unsplash.com/photo-1603352746709-5254ae3226b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdXBwbGVtZW50JTIwamFyfGVufDB8fHx8MTc2MzgyMDg1N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "supplement jar"
+    },
+    {
+      "id": "prod_9",
+      "description": "Container of Multivitamin gummies",
+      "imageUrl": "https://images.unsplash.com/photo-1665757516800-8e0e6ea5816b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxndW1teSUyMHZpdGFtaW5zfGVufDB8fHx8MTc2MzgyMDg1OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "gummy vitamins"
+    },
+    {
+      "id": "prod_10",
+      "description": "Box of Paracetamol tablets",
+      "imageUrl": "https://images.unsplash.com/photo-1648712788983-11311123c622?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZWRpY2luZSUyMGJveHxlbnwwfHx8fDE3NjM4MjA4NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "medicine box"
+    },
+    {
+      "id": "prod_11",
+      "description": "Blister pack of Amoxicillin capsules",
+      "imageUrl": "https://images.unsplash.com/photo-1624454002429-40ed87a5ec04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwaWxscyUyMGJsaXN0ZXJ8ZW58MHx8fHwxNzYzNzI5MTkzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pills blister"
+    },
+    {
+      "id": "prod_12",
+      "description": "Bottle of Ibuprofen",
+      "imageUrl": "https://images.unsplash.com/photo-1661082564813-c0c2e7feddbd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cGFpbmtpbGxlciUyMGJvdHRsZXxlbnwwfHx8fDE3NjM4MjA4NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "painkiller bottle"
+    },
+    {
+      "id": "reco_1",
+      "description": "Recommended product 1",
+      "imageUrl": "https://images.unsplash.com/photo-1563822249366-3efb23b8e0c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aGVyYmFsJTIwdGVhfGVufDB8fHx8MTc2Mzc4NTEwN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "herbal tea"
+    },
+    {
+      "id": "reco_2",
+      "description": "Recommended product 2",
+      "imageUrl": "https://images.unsplash.com/photo-1623826538345-192361e2d4cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxlc3NlbnRpYWwlMjBvaWx8ZW58MHx8fHwxNzYzODA3Nzc1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "essential oil"
+    },
+    {
+      "id": "reco_3",
+      "description": "Recommended product 3",
+      "imageUrl": "https://images.unsplash.com/photo-1559087316-f8860a97e7ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwcm9iaW90aWNzJTIwYm90dGxlfGVufDB8fHx8MTc2MzgyMDg1OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "probiotics bottle"
+    }
+  ]
 }

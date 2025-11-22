@@ -43,18 +43,24 @@ export function RegisterForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
-    // Simulate API call
-    setTimeout(() => {
-      register(values.name, values.email, values.password);
+    try {
+      await register(values.name, values.email, values.password);
       toast({
         title: 'Account created!',
         description: "You've been successfully signed in.",
       });
       router.push('/');
+    } catch (error: any) {
+       toast({
+        variant: 'destructive',
+        title: 'Registration failed',
+        description: error.message || 'An unexpected error occurred.',
+      });
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
   }
 
   return (

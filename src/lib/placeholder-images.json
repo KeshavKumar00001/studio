@@ -99,14 +99,4 @@
     {
       "id": "prod_16",
       "description": "Jar of Chyawanprash, an Ayurvedic health supplement",
-      "imageUrl": "https://images.unsplash.com/photo-1707344238677-1a1ec785f459?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaHlhd2FucHJhc2h8ZW58MHx8fHwxNzYzODIxODQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "chyawanprash"
-    },
-    {
-      "id": "prod_17",
-      "description": "Homeopathic liquid dilution in a small bottle",
-      "imageUrl": "https://images.unsplash.com/photo-1737064731089-eb6f1c6c6a71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxob21lb3BhdGh5JTIwbWVkaWNpbmV8ZW58MHx8fHwxNzYzODIxODQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "homeopathy medicine"
-    }
-  ]
-}
+      "imageUrl": "https://images.unsplash.com/photo-1707344238677-1a1ec785f459?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaHlhd2FucHJhc2h8ZW58MHx8fHwxNzYzODIxODQyfDA&ixlib=rb-4

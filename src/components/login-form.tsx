@@ -41,18 +41,24 @@ export function LoginForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
-    // Simulate API call
-    setTimeout(() => {
-      login(values.email, values.password);
+    try {
+      await login(values.email, values.password);
       toast({
         title: 'Logged in successfully',
         description: 'Welcome back!',
       });
       router.push('/');
+    } catch (error: any) {
+      toast({
+        variant: 'destructive',
+        title: 'Login failed',
+        description: error.message || 'An unexpected error occurred.',
+      });
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
   }
 
   return (
@@ -116,4 +122,3 @@ export function LoginForm() {
       </Form>
     </Card>
   );
-}

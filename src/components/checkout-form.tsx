@@ -53,7 +53,7 @@ export function CheckoutForm() {
       lastName: '',
       address: '',
       city: '',
-      country: '',
+      country: 'India',
       postalCode: '',
       cardName: '',
       cardNumber: '',
@@ -77,7 +77,7 @@ export function CheckoutForm() {
   }
 
   const subtotal = getCartSubtotal();
-  const total = subtotal + (subtotal > 50 || subtotal === 0 ? 0 : 5);
+  const total = subtotal + (subtotal > 500 || subtotal === 0 ? 0 : 50);
 
   return (
     <Form {...form}>
@@ -149,7 +149,7 @@ export function CheckoutForm() {
                     <FormItem>
                     <FormLabel>City</FormLabel>
                     <FormControl>
-                        <Input placeholder="Healthville" {...field} />
+                        <Input placeholder="Mumbai" {...field} />
                     </FormControl>
                     <FormMessage />
                     </FormItem>
@@ -162,7 +162,7 @@ export function CheckoutForm() {
                     <FormItem>
                     <FormLabel>Country</FormLabel>
                     <FormControl>
-                        <Input placeholder="Herbaland" {...field} />
+                        <Input placeholder="India" {...field} />
                     </FormControl>
                     <FormMessage />
                     </FormItem>
@@ -175,7 +175,7 @@ export function CheckoutForm() {
                     <FormItem>
                     <FormLabel>Postal Code</FormLabel>
                     <FormControl>
-                        <Input placeholder="12345" {...field} />
+                        <Input placeholder="400001" {...field} />
                     </FormControl>
                     <FormMessage />
                     </FormItem>
@@ -253,7 +253,7 @@ export function CheckoutForm() {
             ) : (
                 <CreditCard className="mr-2 h-4 w-4" />
             )}
-            {isProcessing ? 'Processing...' : `Pay $${total.toFixed(2)}`}
+            {isProcessing ? 'Processing...' : `Pay ₹${total.toFixed(2)}`}
         </Button>
       </form>
     </Form>

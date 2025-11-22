@@ -64,7 +64,7 @@ export function CartSheet({ children }: CartSheetProps) {
                       <div className="flex-1">
                         <p className="font-medium">{item.product.name}</p>
                         <p className="text-sm text-muted-foreground">
-                          ${item.product.price.toFixed(2)}
+                          ₹{item.product.price.toFixed(2)}
                         </p>
                         <div className="mt-2 flex items-center justify-between">
                           <UpdateCartButtons
@@ -94,7 +94,7 @@ export function CartSheet({ children }: CartSheetProps) {
             <SheetFooter className="p-4 gap-2 bg-background border-t">
               <div className="flex w-full justify-between text-lg font-semibold">
                 <span>Subtotal</span>
-                <span>${subtotal.toFixed(2)}</span>
+                <span>₹{subtotal.toFixed(2)}</span>
               </div>
               <Button className="w-full" asChild onClick={() => setOpen(false)}>
                 <Link href="/checkout">Proceed to Checkout</Link>

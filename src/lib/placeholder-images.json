@@ -2,33 +2,33 @@
   "placeholderImages": [
     {
       "id": "hero",
-      "description": "A serene background of herbs and medicinal plants.",
-      "imageUrl": "https://images.unsplash.com/photo-1730584934611-03b7eb49e3a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxoZXJicyUyMG1lZGljaW5lfGVufDB8fHx8MTc2MzgyMDg1N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "herbs medicine"
+      "description": "A serene background of Indian herbs and spices.",
+      "imageUrl": "https://images.unsplash.com/photo-1590664280407-c75c3126f588?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbmRpYW4lMjBzcGljZXN8ZW58MHx8fHwxNzYzOTExODc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian spices"
     },
     {
       "id": "prod_1",
-      "description": "Bottle of Ashwagandha tablets",
+      "description": "Bottle of Ashwagandha tablets, an Indian ginseng",
       "imageUrl": "https://images.unsplash.com/photo-1633171029787-3a1022cfc922?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtZWRpY2luZSUyMGJvdHRsZXxlbnwwfHx8fDE3NjM3MTgxNjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "medicine bottle"
+      "imageHint": "ayurvedic medicine"
     },
     {
       "id": "prod_2",
-      "description": "Bottle of Triphala powder",
-      "imageUrl": "https://images.unsplash.com/photo-1671753801978-69571ac973b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwb3dkZXIlMjBoZXJic3xlbnwwfHx8fDE3NjM4MjA4NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "powder herbs"
+      "description": "Bowl of Triphala powder, an Ayurvedic herbal formulation",
+      "imageUrl": "https://images.unsplash.com/photo-1519739933176-c5aa3316d6c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhYnVydmVkaWMlMjBoZXJic3xlbnwwfHx8fDE3YzOTExODc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ayurvedic herbs"
     },
     {
       "id": "prod_3",
-      "description": "Bottle of Brahmi capsules",
-      "imageUrl": "https://images.unsplash.com/photo-1562243061-204550d8a2c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjYXBzdWxlcyUyMGJvdHRsZXxlbnwwfHx8fDE3NjM4MjA4NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "capsules bottle"
+      "description": "Brahmi leaves, used in Ayurvedic medicine",
+      "imageUrl": "https://images.unsplash.com/photo-1627917869399-53606eda9f51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxicmFobWklMjBsZWF2ZXN8ZW58MHx8fHwxNzYzOTExODc1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "brahmi leaves"
     },
     {
       "id": "prod_4",
-      "description": "Bottle of Arnica Montana pellets",
+      "description": "Homeopathic pills in a bottle",
       "imageUrl": "https://images.unsplash.com/photo-1608571899793-a1c0c27a7555?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxob21lb3BhdGh5JTIwYm90dGxlfGVufDB8fHx8MTc2MzgyMDg1N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "homeopathy bottle"
+      "imageHint": "homeopathy pills"
     },
     {
       "id": "prod_5",
@@ -80,21 +80,21 @@
     },
     {
       "id": "reco_1",
-      "description": "Recommended product 1",
-      "imageUrl": "https://images.unsplash.com/photo-1563822249366-3efb23b8e0c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aGVyYmFsJTIwdGVhfGVufDB8fHx8MTc2Mzc4NTEwN3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "herbal tea"
+      "description": "Recommended product 1: A cup of Indian masala chai",
+      "imageUrl": "https://images.unsplash.com/photo-1594227743323-289552123594?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjB0ZWF8ZW58MHx8fHwxNzYzOTExODc1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian tea"
     },
     {
       "id": "reco_2",
-      "description": "Recommended product 2",
-      "imageUrl": "https://images.unsplash.com/photo-1623826538345-192361e2d4cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxlc3NlbnRpYWwlMjBvaWx8ZW58MHx8fHwxNzYzODA3Nzc1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Recommended product 2: A bottle of traditional Indian essential oil",
+      "imageUrl": "https://images.unsplash.com/photo-158376632098-6371dd3543b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxpbmRpYW4lMjBvaWx8ZW58MHx8fHwxNzYzOTExODc2fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "essential oil"
     },
     {
       "id": "reco_3",
-      "description": "Recommended product 3",
+      "description": "Recommended product 3: Probiotics in a ceramic bowl",
       "imageUrl": "https://images.unsplash.com/photo-1559087316-f8860a97e7ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwcm9iaW90aWNzJTIwYm90dGxlfGVufDB8fHx8MTc2MzgyMDg1OHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "probiotics bottle"
+      "imageHint": "probiotics food"
     }
   ]
 }

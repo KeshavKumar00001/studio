@@ -68,7 +68,7 @@ export function AiRecommendations() {
                 id: `reco-${aiProd.name.replace(/\s+/g, '-').toLowerCase()}-${index}`,
                 name: aiProd.name,
                 description: `A recommended ${aiProd.category} product.`,
-                price: 14.99,
+                price: 449.00,
                 category: isValidCategory ? aiProd.category as ProductCategory : 'Supplements',
                 attributes: aiProd.attributes,
                 imageId: `reco_${(index % 3) + 1}`,

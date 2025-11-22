@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button";
 export default function CheckoutPage() {
     const { cartItems, getCartSubtotal, getCartCount } = useCart();
     const subtotal = getCartSubtotal();
-    const shippingFee = subtotal > 50 || subtotal === 0 ? 0 : 5;
+    const shippingFee = subtotal > 500 || subtotal === 0 ? 0 : 50;
     const total = subtotal + shippingFee;
 
     if (getCartCount() === 0) {
@@ -49,7 +49,7 @@ export default function CheckoutPage() {
                                     <div className="flex-1">
                                         <p className="text-sm font-medium">{item.product.name}</p>
                                     </div>
-                                    <p className="text-sm font-medium">${(item.product.price * item.quantity).toFixed(2)}</p>
+                                    <p className="text-sm font-medium">₹{(item.product.price * item.quantity).toFixed(2)}</p>
                                 </div>
                             )
                         })}
@@ -59,17 +59,17 @@ export default function CheckoutPage() {
                 <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
                         <p className="text-muted-foreground">Subtotal</p>
-                        <p className="font-medium">${subtotal.toFixed(2)}</p>
+                        <p className="font-medium">₹{subtotal.toFixed(2)}</p>
                     </div>
                     <div className="flex justify-between">
                         <p className="text-muted-foreground">Shipping</p>
-                        <p className="font-medium">{shippingFee === 0 ? "Free" : `$${shippingFee.toFixed(2)}`}</p>
+                        <p className="font-medium">{shippingFee === 0 ? "Free" : `₹${shippingFee.toFixed(2)}`}</p>
                     </div>
                 </div>
                 <Separator className="my-4" />
                 <div className="flex justify-between font-bold text-lg">
                     <p>Total</p>
-                    <p>${total.toFixed(2)}</p>
+                    <p>₹{total.toFixed(2)}</p>
                 </div>
             </CardContent>
         </Card>

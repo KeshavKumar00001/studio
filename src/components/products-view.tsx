@@ -96,8 +96,8 @@ export function ProductsView({ allProducts }: ProductsViewProps) {
           step={1}
         />
         <div className="flex justify-between text-sm text-muted-foreground mt-2">
-          <span>$0</span>
-          <span>${priceRange[0].toFixed(2)}</span>
+          <span>₹0</span>
+          <span>₹{priceRange[0].toFixed(2)}</span>
         </div>
       </div>
       <Button variant="ghost" onClick={clearFilters} className="w-full justify-start p-0 h-auto">

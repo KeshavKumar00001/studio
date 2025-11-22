@@ -18,7 +18,6 @@ import { ScrollArea } from './ui/scroll-area';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { UpdateCartButtons } from './update-cart-buttons';
-import { AiRecommendations } from './ai-recommendations';
 import { useState } from 'react';
 
 interface CartSheetProps {
@@ -85,9 +84,6 @@ export function CartSheet({ children }: CartSheetProps) {
                     </div>
                   );
                 })}
-              </div>
-              <div className="px-4">
-                 <AiRecommendations />
               </div>
             </ScrollArea>
             

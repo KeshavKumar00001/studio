@@ -31,7 +31,7 @@ export function ProductCard({ product }: ProductCardProps) {
       <CardContent className="flex-1">
         <Badge variant="secondary" className="mb-2">{product.category}</Badge>
         <CardTitle className="text-lg font-medium">{product.name}</CardTitle>
-        <p className="mt-2 text-xl font-semibold">₹{product.price.toFixed(2)}</p>
+        <p className="mt-2 text-xl font-semibold">INR {product.price.toFixed(2)}</p>
       </CardContent>
       <CardFooter>
         <AddToCartButton product={product} />

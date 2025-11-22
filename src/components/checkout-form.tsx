@@ -253,7 +253,7 @@ export function CheckoutForm() {
             ) : (
                 <CreditCard className="mr-2 h-4 w-4" />
             )}
-            {isProcessing ? 'Processing...' : `Pay ₹${total.toFixed(2)}`}
+            {isProcessing ? 'Processing...' : `Pay INR ${total.toFixed(2)}`}
         </Button>
       </form>
     </Form>

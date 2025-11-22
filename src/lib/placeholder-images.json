@@ -101,6 +101,12 @@
       "description": "Jar of Chyawanprash, an Ayurvedic health supplement",
       "imageUrl": "https://images.unsplash.com/photo-1707344238677-1a1ec785f459?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaHlhd2FucHJhc2h8ZW58MHx8fHwxNzYzODIxODQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "chyawanprash supplement"
+    },
+    {
+      "id": "prod_17",
+      "description": "Bottle of Lycopodium Clavatum homeopathic remedy",
+      "imageUrl": "https://images.unsplash.com/photo-1671493234884-b1611bcf3e69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxob21lb3BhdGhpYyUyMHJlbWVkeXxlbnwwfHx8fDE3NjM4MjU1MTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "homeopathic remedy"
     }
   ]
 }

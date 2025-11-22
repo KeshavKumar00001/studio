@@ -11,14 +11,17 @@ import React, {
 import { useRouter } from 'next/navigation';
 import {
   User as FirebaseUser,
+  createUserWithEmailAndPassword,
 } from 'firebase/auth';
 import {
   initiateEmailSignIn,
-  initiateEmailSignUp,
 } from '@/firebase/non-blocking-login';
 import { useAuth as useFirebaseAuth, useFirestore } from '@/firebase';
-import { doc, setDoc } from 'firebase/firestore';
+import { doc } from 'firebase/firestore';
 import { setDocumentNonBlocking } from '@/firebase/non-blocking-updates';
+import { errorEmitter } from '@/firebase/error-emitter';
+import { FirestorePermissionError } from '@/firebase/errors';
+
 
 interface User {
   id: string;
@@ -66,23 +69,25 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const register = async (name: string, email: string, password?: string) => {
     if (auth && firestore && password) {
-      try {
-        // This part needs to be blocking to get the user credential for doc creation
-        const userCredential = await auth.createUserWithEmailAndPassword(email, password);
-        const newUser = userCredential.user;
-        if (newUser) {
-          const userDocRef = doc(firestore, 'users', newUser.uid);
-          const userData = {
-            id: newUser.uid,
-            firstName: name.split(' ')[0] || '',
-            lastName: name.split(' ')[1] || '',
-            email: newUser.email,
-          };
-          // We can use the non-blocking update here after user creation
-          setDocumentNonBlocking(userDocRef, userData, { merge: true });
-        }
-      } catch (error) {
-        console.error("Error during registration:", error);
+      // This part needs to be blocking to get the user credential for doc creation
+      const userCredential = await createUserWithEmailAndPassword(email, password).catch(error => {
+         // This is a special case. We want to show auth errors to the user.
+         // We can throw here because it's in an async function handler.
+         throw error;
+      });
+
+      const newUser = userCredential.user;
+      if (newUser) {
+        const userDocRef = doc(firestore, 'users', newUser.uid);
+        const userData = {
+          id: newUser.uid,
+          firstName: name.split(' ')[0] || '',
+          lastName: name.split(' ')[1] || '',
+          email: newUser.email,
+          addressId: '', // Add this line
+        };
+        // We can use the non-blocking update here after user creation
+        setDocumentNonBlocking(userDocRef, userData, { merge: true });
       }
     }
   };

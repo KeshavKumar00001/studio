@@ -95,6 +95,36 @@
       "description": "Recommended product 3: Probiotics in a ceramic bowl",
       "imageUrl": "https://images.unsplash.com/photo-1559087316-f8860a97e7ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwcm9iaW90aWNzJTIwYm90dGxlfGVufDB8fHx8MTc2MzgyMDg1OHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "probiotics food"
+    },
+    {
+      "id": "prod_13",
+      "description": "Turmeric capsules in a bottle",
+      "imageUrl": "https://images.unsplash.com/photo-1630600424597-883a91c1251e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0dXJtZXJpYyUyMGNhcHN1bGVzfGVufDB8fHx8MTc2MzkzMDk2M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "turmeric capsules"
+    },
+    {
+      "id": "prod_14",
+      "description": "Calcium and magnesium supplement pills",
+      "imageUrl": "https://images.unsplash.com/photo-1628526325997-3a1b3b6a9512?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYWxjaXVtJTIwcGlsbHN8ZW58MHx8fHwxNzYzOTMwOTYz&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "calcium pills"
+    },
+    {
+      "id": "prod_15",
+      "description": "Box of Cetirizine allergy pills",
+      "imageUrl": "https://images.unsplash.com/photo-1624454002429-40ed87a5ec04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhbGxlcmd5JTIwcGlsbHN8ZW58MHx8fHwxNzYzOTMwOTYz&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "allergy pills"
+    },
+    {
+      "id": "prod_16",
+      "description": "Jar of Chyawanprash, an Ayurvedic health supplement",
+      "imageUrl": "https://images.unsplash.com/photo-1605330366896-a97951d9326b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaHlhbWFucHJhc2h8ZW58MHx8fHwxNzYzOTMwOTY0&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chyawanprash"
+    },
+    {
+      "id": "prod_17",
+      "description": "Homeopathic liquid dilution in a small bottle",
+      "imageUrl": "https://images.unsplash.com/photo-1608571899793-a1c0c27a7555?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxob21lb3BhdGh5JTIwbWVkaWNpbmV8ZW58MHx8fHwxNzYzOTMwOTY0&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "homeopathy medicine"
     }
   ]
 }

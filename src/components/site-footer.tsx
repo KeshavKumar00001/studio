@@ -1,4 +1,5 @@
 import { Leaf } from 'lucide-react';
+import Link from 'next/link';
 
 export function SiteFooter() {
   return (
@@ -10,6 +11,9 @@ export function SiteFooter() {
             Built by Aushadhalaya. &copy; {new Date().getFullYear()} All rights
             reserved.
           </p>
+        </div>
+        <div className='text-sm'>
+          <Link href="/debug/storage" className='text-muted-foreground hover:text-foreground'>View Stored Data</Link>
         </div>
       </div>
     </footer>
